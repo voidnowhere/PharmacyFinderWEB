@@ -55,19 +55,23 @@ function Cities() {
                     </tr>
                     </thead>
                     <tbody>
-                    {cities.map((city) => (
-                        <tr key={city.id}>
-                            <td>{city.name}</td>
-                            <td className="d-flex gap-2">
-                                <Button variant="outline-success" size="sm" onClick={() => setCurrentCity(city.id)}>
-                                    <i className="bi bi-pencil-square"></i>
-                                </Button>
-                                <Button variant="outline-danger" size="sm" onClick={() => deleteCity(city.id)}>
-                                    <i className="bi bi-trash3-fill"></i>
-                                </Button>
-                            </td>
-                        </tr>
-                    ))}
+                    {
+                        cities
+                        &&
+                        cities.map((city) => (
+                            <tr key={city.id}>
+                                <td>{city.name}</td>
+                                <td className="d-flex gap-2">
+                                    <Button variant="outline-success" size="sm" onClick={() => setCurrentCity(city.id)}>
+                                        <i className="bi bi-pencil-square"></i>
+                                    </Button>
+                                    <Button variant="outline-danger" size="sm" onClick={() => deleteCity(city.id)}>
+                                        <i className="bi bi-trash3-fill"></i>
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))
+                    }
                     </tbody>
                 </Table>
                 {

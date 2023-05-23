@@ -41,59 +41,63 @@ function Disponibility({pharmacyId, show, setShow}) {
                     </tr>
                     </thead>
                     <tbody>
-                    {weekdays.map((weekday) => (
-                        <tr key={weekday.id}>
-                            <td>{weekday.weekDay.name}</td>
-                            <td>
-                                <Form.Control type="time" defaultValue={weekday.firstShiftOpens}
-                                              onChange={(e) => {
-                                                  setWeekdays(prevState => prevState.map((p) => {
-                                                      if (p.id === weekday.id) {
-                                                          p.firstShiftOpens = e.target.value;
-                                                      }
-                                                      return p;
-                                                  }))
-                                              }}/>
-                            </td>
-                            <td>
-                                <Form.Control type="time" defaultValue={weekday.firstShiftCloses}
-                                              onChange={(e) => {
-                                                  setWeekdays(prevState => prevState.map((p) => {
-                                                      if (p.id === weekday.id) {
-                                                          p.firstShiftCloses = e.target.value;
-                                                      }
-                                                      return p;
-                                                  }))
-                                              }}/>
-                            </td>
-                            <td>
-                                <Form.Control type="time" defaultValue={weekday.secondShiftOpens}
-                                              onChange={(e) => {
-                                                  setWeekdays(prevState => prevState.map((p) => {
-                                                      if (p.id === weekday.id) {
-                                                          p.secondShiftOpens = e.target.value;
-                                                      }
-                                                      return p;
-                                                  }))
-                                              }}/>
-                            </td>
-                            <td>
-                                <Form.Control type="time" defaultValue={weekday.secondShiftCloses}
-                                              onChange={(e) => {
-                                                  setWeekdays(prevState => prevState.map((p) => {
-                                                      if (p.id === weekday.id) {
-                                                          p.secondShiftCloses = e.target.value;
-                                                      }
-                                                      return p;
-                                                  }))
-                                              }}/>
-                            </td>
-                            <td>
-                                <Button variant="outline-primary" size="sm"
-                                        onClick={() => save(weekday.id)}>Update</Button>
-                            </td>
-                        </tr>
-                    ))}
+                    {
+                        weekdays
+                        &&
+                        weekdays.map((weekday) => (
+                            <tr key={weekday.id}>
+                                <td>{weekday.weekDay.name}</td>
+                                <td>
+                                    <Form.Control type="time" defaultValue={weekday.firstShiftOpens}
+                                                  onChange={(e) => {
+                                                      setWeekdays(prevState => prevState.map((p) => {
+                                                          if (p.id === weekday.id) {
+                                                              p.firstShiftOpens = e.target.value;
+                                                          }
+                                                          return p;
+                                                      }))
+                                                  }}/>
+                                </td>
+                                <td>
+                                    <Form.Control type="time" defaultValue={weekday.firstShiftCloses}
+                                                  onChange={(e) => {
+                                                      setWeekdays(prevState => prevState.map((p) => {
+                                                          if (p.id === weekday.id) {
+                                                              p.firstShiftCloses = e.target.value;
+                                                          }
+                                                          return p;
+                                                      }))
+                                                  }}/>
+                                </td>
+                                <td>
+                                    <Form.Control type="time" defaultValue={weekday.secondShiftOpens}
+                                                  onChange={(e) => {
+                                                      setWeekdays(prevState => prevState.map((p) => {
+                                                          if (p.id === weekday.id) {
+                                                              p.secondShiftOpens = e.target.value;
+                                                          }
+                                                          return p;
+                                                      }))
+                                                  }}/>
+                                </td>
+                                <td>
+                                    <Form.Control type="time" defaultValue={weekday.secondShiftCloses}
+                                                  onChange={(e) => {
+                                                      setWeekdays(prevState => prevState.map((p) => {
+                                                          if (p.id === weekday.id) {
+                                                              p.secondShiftCloses = e.target.value;
+                                                          }
+                                                          return p;
+                                                      }))
+                                                  }}/>
+                                </td>
+                                <td>
+                                    <Button variant="outline-primary" size="sm"
+                                            onClick={() => save(weekday.id)}>Update</Button>
+                                </td>
+                            </tr>
+                        ))
+                    }
                     </tbody>
                 </Table>
             </Modal.Body>

@@ -124,9 +124,13 @@ function MyPharmacy() {
                     <Form.Select className="mb-3" required value={currentCity}
                                  onChange={(e) => setCurrentCity(e.target.value)}>
                         <option hidden value={-1}>Select a city</option>
-                        {cities.map((city) => (
-                            <option key={city.id} value={city.id}>{city.name}</option>
-                        ))}
+                        {
+                            cities
+                            &&
+                            cities.map((city) => (
+                                <option key={city.id} value={city.id}>{city.name}</option>
+                            ))
+                        }
                     </Form.Select>
                     {zones.length > 0 &&
                         <Form.Select required className="mb-3" value={currentZone}
