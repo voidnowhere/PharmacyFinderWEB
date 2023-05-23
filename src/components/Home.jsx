@@ -89,9 +89,13 @@ function Home() {
                     <Col>
                         <Form.Select onChange={(e) => setCurrentCity(e.target.value)}>
                             <option hidden={true}>Select a city</option>
-                            {cities.map((city) => (
-                                <option key={city.id} value={city.id}>{city.name}</option>
-                            ))}
+                            {
+                                cities
+                                &&
+                                cities.map((city) => (
+                                    <option key={city.id} value={city.id}>{city.name}</option>
+                                ))
+                            }
                         </Form.Select>
                     </Col>
                     <Col>
