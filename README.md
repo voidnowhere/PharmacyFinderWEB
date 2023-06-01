@@ -1,4 +1,4 @@
-# Pharmacy Management WEB & [API](https://github.com/voidnowhere/PharmacyManagementAPI)
+# Pharmacy Finder WEB & [API](https://github.com/voidnowhere/PharmacyManagementAPI)
 
 <hr>
 
