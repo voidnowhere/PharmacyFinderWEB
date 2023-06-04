@@ -7,6 +7,16 @@ import {MapContainer, Marker, TileLayer, Tooltip} from "react-leaflet";
 import pharmacyImage from '../assets/pharmacy.png'
 import Footer from "./Footer.jsx";
 import "leaflet/dist/leaflet.css";
+import marker_icon from '../assets/marker/marker-icon.png';
+import marker_shadow from '../assets/marker/marker-shadow.png';
+import marker_icon_2x from '../assets/marker/marker-icon-2x.png';
+
+const markerIcon = L.icon({
+    ...L.Icon.Default.prototype.options,
+    iconUrl: marker_icon,
+    iconRetinaUrl: marker_icon_2x,
+    shadowUrl: marker_shadow,
+});
 
 function Home() {
     const [cities, setCities] = useState([]);
@@ -65,7 +75,7 @@ function Home() {
 
     function customMarker(pharmacy) {
         return (
-            <Marker key={pharmacy.id} position={[pharmacy.latitude, pharmacy.longitude]}
+            <Marker key={pharmacy.id} position={[pharmacy.latitude, pharmacy.longitude]} icon={markerIcon}
                     eventHandlers={{
                         click: () => {
                             if (currentLocation !== null) {
@@ -166,7 +176,7 @@ function Home() {
                                 {
                                     currentLocation
                                     &&
-                                    <Marker position={[currentLocation.latitude, currentLocation.longitude]}>
+                                    <Marker position={[currentLocation.latitude, currentLocation.longitude]} icon={markerIcon}>
                                         <Tooltip direction="top" offset={[-15, -15]} permanent>Your location</Tooltip>
                                     </Marker>
                                 }
