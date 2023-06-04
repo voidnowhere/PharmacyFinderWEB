@@ -6,6 +6,7 @@ import {Button, Card, Col, Form, Modal, Row} from "react-bootstrap";
 import {MapContainer, Marker, TileLayer, Tooltip} from "react-leaflet";
 import pharmacyImage from '../assets/pharmacy.png'
 import Footer from "./Footer.jsx";
+import "leaflet/dist/leaflet.css";
 
 function Home() {
     const [cities, setCities] = useState([]);
