@@ -11,6 +11,7 @@ import MyPharmacy from "./components/Pharmacist/MyPharmacy.jsx";
 import {useSelector} from "react-redux";
 import Cities from "./components/Admin/Cities/Cities.jsx";
 import Zones from "./components/Admin/Zones/Zones.jsx";
+import {Analytics} from '@vercel/analytics/react';
 
 function App() {
     const isAuthenticated = useSelector(state => state.user.isAuthenticated);
@@ -38,7 +39,10 @@ function App() {
     ]);
 
     return (
-        <RouterProvider router={router}/>
+        <>
+            <RouterProvider router={router}/>
+            <Analytics/>
+        </>
     )
 }
 
