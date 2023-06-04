@@ -8,6 +8,16 @@ import {Notify} from 'notiflix/build/notiflix-notify-aio';
 import {MapContainer, Marker, TileLayer, useMapEvent} from "react-leaflet";
 import Disponibility from "./Disponibility.jsx";
 import "leaflet/dist/leaflet.css";
+import marker_icon from '../../assets/marker/marker-icon.png';
+import marker_shadow from '../../assets/marker/marker-shadow.png';
+import marker_icon_2x from '../../assets/marker/marker-icon-2x.png';
+
+const markerIcon = L.icon({
+    ...L.Icon.Default.prototype.options,
+    iconUrl: marker_icon,
+    iconRetinaUrl: marker_icon_2x,
+    shadowUrl: marker_shadow,
+});
 
 function MyPharmacy() {
     const [showMap, setShowMap] = useState(false);
@@ -160,7 +170,7 @@ function MyPharmacy() {
                             {
                                 pharmacyPosition
                                 &&
-                                <Marker position={pharmacyPosition}></Marker>
+                                <Marker position={pharmacyPosition} icon={markerIcon}></Marker>
                             }
                             <MapClickHandler/>
                         </MapContainer>
