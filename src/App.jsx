@@ -1,7 +1,6 @@
 import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import "leaflet/dist/leaflet.css";
 import Home from "./components/Home.jsx";
 import Contact from "./components/Contact.jsx";
 import AboutUs from "./components/AboutUs.jsx";

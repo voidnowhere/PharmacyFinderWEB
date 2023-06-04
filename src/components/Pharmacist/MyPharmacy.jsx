@@ -7,6 +7,7 @@ import {Button, FloatingLabel, Form, Modal} from "react-bootstrap";
 import {Notify} from 'notiflix/build/notiflix-notify-aio';
 import {MapContainer, Marker, TileLayer, useMapEvent} from "react-leaflet";
 import Disponibility from "./Disponibility.jsx";
+import "leaflet/dist/leaflet.css";
 
 function MyPharmacy() {
     const [showMap, setShowMap] = useState(false);
