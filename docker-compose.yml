@@ -1,10 +1,11 @@
 version: '3'
 services:
-  front_dev:
-    image: node:18.10
-    stdin_open: true
+  node:
+    container_name: pharmacy-finder-node
+    image: node:18
     working_dir: /app
-    ports:
-      - "5173:5173"
     volumes:
       - ./:/app
+    ports:
+      - '${APP_PORT}:5173'
+    entrypoint: [ 'sh', '-c', 'npm install -g npm && npm install && npm run dev' ]
